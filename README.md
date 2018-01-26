@@ -43,7 +43,7 @@ e.g. sequence-to-sequence model, you can just type:
   <img src="./Doc/run_model.png">
 </p>
 
-As you may immedately notice that the commands here are almost identical to Keras. Yes, 
+As you may immediately notice that the commands here are almost identical to Keras. Yes, 
 this is the purpose of this library, i.e. a time-series model-based library that
 helps you build complicated time-series models in just a few lines. 
 
