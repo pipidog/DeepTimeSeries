@@ -1,6 +1,7 @@
 import numpy as np
 import pickle 
-from DeepTimeSeries.models import *
+from DeepTimeSeries.models.RNN2Dense import *
+from DeepTimeSeries.models.Seq2Seq import *
 from keras.models import load_model
 
 def series_to_superviesed(x_timeseries, y_timeseries, n_memory_step, n_forcast_step, split = None):
@@ -43,9 +44,11 @@ def load_time_series_model(model_name):
     model_name = model_info['class']
     model_info.pop('class')
 
-    # reload models
-    if model_name == 'RNN2Dense':
-        model = RNN2Dense(**model_info,reload = True)
+    # reload models (only this part needs to change)
+    if model_name == 'RNN2Dense_1':
+        model = RNN2Dense_1(**model_info,reload = True)
+    elif 'RNN2Dense_2':
+        model = RNN2Dense_2(**model_info,reload = True)
     elif 'Seq2Seq_1':
         model = Seq2Seq_1(**model_info,reload = True)
     elif 'Seq2Seq_2':
